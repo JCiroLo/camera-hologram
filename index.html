@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disco Planet</title>
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+  <script type="importmap">
+    { 
+      "imports": { 
+        "three": "https://unpkg.com/three@0.151.2/build/three.module.js", 
+        "three/addons/": "https://unpkg.com/three@0.151.2/examples/jsm/" 
+      } 
+    } 
+  </script>
+
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <div id="controls">
+    <div class="keys">
+      <div class="helper">Songs</div>
+      <div id="Digit1" class="key active"><i>1</i></div>
+      <div id="Digit2" class="key"><i>2</i></div>
+      <div id="Digit3" class="key"><i>3</i></div>
+    </div>
+    <div class="keys">
+      <div class="helper">Music Player</div>
+      <div id="KeyQ" class="key"><i>Q</i></div>
+      <div id="KeyW" class="key"><i>W</i></div>
+    </div>
+    <div class="keys">
+      <div class="helper">Camera</div>
+      <div id="KeyA" class="key"><i>A</i></div>
+      <div id="KeyS" class="key"><i>S</i></div>
+      <div id="KeyD" class="key"><i>D</i></div>
+      <div id="KeyF" class="key active"><i>F</i></div>
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.3.0/simplex-noise.min.js'></script>
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>

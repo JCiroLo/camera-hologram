@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#controls {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  display: flex;
+  gap: 32px;
+  transform: translateX(-50%);
+}
+
+#controls .keys {
+  position: relative;
+  display: flex;
+}
+
+#controls .helper {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: max-content;
+  padding: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #232323, #4a4a4a);
+  color: white;
+  transform: translateX(-50%);
+}
+
+#controls .key {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  padding: 8px 15px;
+  margin: 8px 4px;
+  background-image: linear-gradient(180deg, #282828, #202020);
+  border-radius: 10px;
+  box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+    inset 0 -8px 8px rgba(0, 0, 0, 0.25),
+    0 0 0 2px rgba(0, 0, 0, 0.75),
+    10px 20px 25px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+
+  transition: background-image 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+#controls .key.active {
+  background-image: linear-gradient(180deg, #7b7b7b, #7b7b7b);
+  border: 2px solid white;
+}
+
+#controls .key.active::before {
+  background-image: linear-gradient(90deg, #646464, #767676);
+}
+
+#controls .key::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 80%;
+  height: 80%;
+  background-image: linear-gradient(90deg, #232323, #4a4a4a);
+  border-radius: 10px;
+  box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.25),
+    10px 5px 10px rgba(0, 0, 0, 0.15);
+  transition: background-image 0.2s ease-out;
+}
+
+#controls .key i {
+  position: relative;
+  font-family: sans-serif;
+  font-size: 1em;
+  font-style: normal;
+  color: #fff;
+}
