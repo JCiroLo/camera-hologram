@@ -44,8 +44,8 @@ export default class Scenario {
     };
     this.config = {
       grid: {
-        w: 2000,
-        h: 1000,
+        w: 96,
+        h: 72,
       },
       camera: {
         velocity: 0.05,
