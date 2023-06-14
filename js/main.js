@@ -20,15 +20,15 @@ const CameraKeys = {
   free: document.getElementById("KeyF"),
 };
 
+const song1 = new Sample("./audio/song_1.mp3");
+const song2 = new Sample("./audio/song_2.mp3");
+const song3 = new Sample("./audio/song_3.mp3");
+
+const musicPlayer = new MusicPlayer([song1, song2, song3]);
+
 window.addEventListener("load", () => {
-  const song1 = new Sample("./audio/song_1.mp3");
-  const song2 = new Sample("./audio/song_2.mp3");
-  const song3 = new Sample("./audio/song_3.mp3");
-
-  const musicPlayer = new MusicPlayer([song1, song2, song3]);
-
   const app = new Scenario("#app");
-  app.init(musicPlayer);
+  app.init({ musicPlayer });
 
   const audioContext = app.getAudioContext();
 

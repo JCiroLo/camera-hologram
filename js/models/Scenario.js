@@ -44,8 +44,8 @@ export default class Scenario {
     };
     this.config = {
       grid: {
-        w: 120,
-        h: 90,
+        w: 2000,
+        h: 1000,
       },
       camera: {
         velocity: 0.05,
@@ -419,7 +419,7 @@ export default class Scenario {
    * Scenario initializer
    * @param {MusicPlayer} musicPlayer - MusicPlayer instance
    * */
-  init(musicPlayer) {
+  init({ musicPlayer }) {
     this._createStats();
     this._createRenderer();
     this._createScene();
@@ -524,25 +524,7 @@ export default class Scenario {
     this.bloomPass.strength = this.config.effects.bloomPass.strength;
   }
 
-  _animateLights() {
-    const { overallAvg } = this._getFrequencies(
-      this.audioAnalyser,
-      this.audioArray
-    );
-
-    const lights = Utils.modulate(overallAvg, 0, 20, 0.5, 0);
-    const bloom = Utils.modulate(overallAvg, 0, 20, 1.67, 0.42);
-
-    // this.ambientLight.intensity = lights;
-
-    this.bloomPass.strength = Number(bloom);
-    this.config.bloomPass.strength = bloom;
-  }
-
   _animate() {
-    if (this.musicPlayer.isPlaying()) {
-    }
-
     this._drawParticles();
     this._getMusicFrequencies();
     this._animateCamera();
